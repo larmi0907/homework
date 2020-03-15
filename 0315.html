@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    
+    <title>1주차 과제 이아람</title>
+    <style>
+        body > * {font-family: 'Nanum Gothic', sans-serif;}
+        h1 { font-weight: bold; padding-right:10px; }
+        .warp{ width: 700px; margin:0 auto; }
+            .imgBox > img { width:100%; }
+            .txtBox{ padding:20px 0; }
+                .txttit { width:100%; height:60px; float: left; line-height: 60px; }
+                .txttit > * { float: left; }
+            .inputBox { text-align:center; }
+                .input-group-prepend span { font-size: 16px !important; }
+
+    </style>
+</head>
+<body>
+    <div class="warp">
+        <div class="imgBox">
+            <img src="https://www.mypetsname.com/wp-content/uploads/2019/09/Animal-Names.jpg" alt="너굴맨">
+        </div>
+        <div class="txtBox">
+            <div class="txttit">
+                <h1>너굴맨 카페</h1>
+                <p><b>입장권 가격 : 3,000원/장</b></p>
+            </div>
+            <p>이 너굴맨은 사실 특별한 사연을 가지고있어요. 무리에서 낙오되어 카페에서 성장해온 아기 너구리는 사람을 가족이자 친구로 생각한답니다. 너굴맨의 또 다른 친구가 되어주세요!</p>
+        </div>
+        <div class="inputBox">
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">주문자 이름</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">수량</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect01">
+                    <option selected>--수량을 선택하세요--</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">주소</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">전화번호</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div type="button" class="btn btn-primary">주문하기</div>
+        </div>
+    </div>
+</body>
+</html>
