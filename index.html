@@ -13,8 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    
-    <title>1주차 과제 이아람</title>
+    <title>2주차 과제 이아람</title>
     <style>
         body > * {font-family: 'Nanum Gothic', sans-serif;}
         h1 { font-weight: bold; padding-right:10px; }
@@ -25,7 +24,9 @@
                 .txttit > * { float: left; }
             .inputBox { text-align:center; }
                 .input-group-prepend span { font-size: 16px !important; }
-
+            .orderlist{ display:none; width:100%; margin:3rem 0; padding:3rem; border-radius:5px; background:#f7f7f7;}
+                .orderlist h5 {margin-bottom: 0;}
+                .orderlist p { text-align: left; line-height: 2rem; margin-bottom: 0; }
     </style>
 </head>
 <body>
@@ -43,9 +44,9 @@
         <div class="inputBox">
             <div class="input-group input-group-sm mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">주문자 이름</span>
+                    <span class="input-group-text" id="inputGroup-user-name">주문자 이름</span>
                 </div>
-                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                <input type="text" class="form-control user-name" aria-label="Small" aria-describedby="inputGroup-user-name">
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -60,18 +61,60 @@
             </div>
             <div class="input-group input-group-sm mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">주소</span>
+                    <span class="input-group-text" id="inputGroup-adress">주소</span>
                 </div>
-                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                <input type="text" class="form-control user-adress" aria-label="Small" aria-describedby="inputGroup-adress">
             </div>
             <div class="input-group input-group-sm mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-sm">전화번호</span>
+                        <span class="input-group-text" id="inputGroup-number">전화번호</span>
                     </div>
-                    <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                    <input type="text" class="form-control user-number" aria-label="Small" aria-describedby="inputGroup-number">
                 </div>
-                <div type="button" class="btn btn-primary">주문하기</div>
+                <div type="button" class="btn btn-primary" id="orderBt">주문하기</div>
+                <div class="orderlist">
+                    <h5>주문확인</h5>
+                    <p>
+                        <span class="order-end"></span>
+                    </p>
+                </div>
         </div>
     </div>
+
+    
+    <script>
+        /* 이름, 수량, 주소, 휴대폰번호 중 하나라도 입력되어 있지 않으면, alert이 뜨고,
+            입력 안한 곳에 포커스가 맞춰지도록 해보세요.(JQuery의 .focus()를 이용하면 굿!) */
+            let userName = $('.user-name');
+            let selectNum = $('#inputGroupSelect01');
+            let userAdress = $('.user-adress');
+            let userNumber = $('.user-number');        
+
+            $('#orderBt').click(function(){
+                if( userName.val() == '' ){
+                    alert('주문자명을 입력해주세요.');
+                    userName.focus();
+                }else if( selectNum.val() == "--수량을 선택하세요--" ){
+                    alert('수량을 선택해주세요.');
+                    selectNum.focus();
+                }else if( userAdress.val() == '' ){
+                    alert('주소를 입력해주세요.');
+                    userAdress.focus();
+                }else if( userNumber.val() == '' ){
+                    alert('전화번호를 입력해주세요.');
+                    userNumber.focus();
+                }else{
+                    userName.val('');
+                    selectNum.val('');
+                    userAdress.val('');
+                    userNumber.val('');
+
+                    $('#orderBt').text('주문완료');
+                    $('.orderlist').css({'display':'block'});
+                    $('.order-end').html( '주문자이름: '+userName.val()+'<br>'+'수량: '+selectNum.val()+'<br>'+'주소: '+userAdress.val()+'<br>'+'전화번호: '+userNumber.val() );
+                }
+            });
+    </script>
+
 </body>
 </html>
